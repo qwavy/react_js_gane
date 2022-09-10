@@ -3,15 +3,12 @@ import './App.css';
 import { useState } from 'react'
 // import {classNames} from 'react'
 function App() {
-
+  
   const enemy = document.querySelector('.enemy')
   const [isActive, setIsActive] = useState(false)
-  // const characterClass = className({
-  //   'character'
-  // });
+
   const click = () => {
-    // if(character)
-    console.log()
+
 
     if (document.querySelector('.character').classList == 'character') {
       document.querySelector('.character').classList.add('jumping-character')
@@ -23,22 +20,15 @@ function App() {
     }, 1000);
   }
 
-    // setInterval(() => { 
+    setInterval(() => { 
 
-    // const characterTop = parseInt(getComputedStyle(character).getPropertyValue('top')); 
 
-    // const characterTop = parseInt(window.load.getComputedStyle(character).getPropertyValue('top')); 
 
-    // const enemyLeft = parseInt(window.load.getComputedStyle(enemy).getPropertyValue('left')); 
+    if (parseFloat(getComputedStyle(document.querySelector('.enemy')).getPropertyValue('left')) >= 0 && parseFloat(getComputedStyle(document.querySelector('.enemy')).getPropertyValue('left')) < 20 && parseFloat(getComputedStyle(document.querySelector('.character')).getPropertyValue('top')) > 118) { 
 
-    // const enemyLeft = parseInt(getComputedStyle(enemy).getPropertyValue('left'))
-
-    // if (enemyLeft >= 0 && enemyLeft < 20 && characterTop > 118) { 
-    // enemy.style.animation = 'none'; 
-    // enemy.style.display = 'none'; 
-    // alert('You lost!'); 
-    // } 
-    // }, 100)
+    alert('You lost!'); 
+    } 
+    }, 100)
 
     return (
       <div className='container' onClick={click}>
